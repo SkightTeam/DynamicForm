@@ -2,6 +2,7 @@
 
  <div>
    <h1>动态表单编辑器</h1>
+   <h2>Skight I-Tech Inc.</h2>
    <sk-form :meta="schema"></sk-form>
  </div>
 </template>
