@@ -1,6 +1,12 @@
 <template >
  <div>
-   <div v-for="item in meta">{{item.name}}</div>
+   <div>
+   <div v-for="item in meta">
+     <label>{{item.name}}:</label>
+     <input ></input>
+   </div>
+   </div>
+   <button>submit</button>
  </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template >
 
  <div>
-   <h1>Dynamic Form Editor</h1>
+   <h1>动态表单编辑器</h1>
    <sk-form :meta="schema"></sk-form>
  </div>
 </template>
