@@ -13,7 +13,7 @@
     div
       div(style="width:50%; display:inline-block")
         h3 增加数据
-        sk-form(:meta="meta")
+        sk-form(:meta="meta" v-on:submit="addRecord")
       div(style="width:50%; display:inline-block;")
         h3 数据
         div {{data}}
@@ -22,7 +22,7 @@
 <script>
   import SkForm from './skForm'
   var meta = []
-  var data = {}
+  var data = []
   export default {
     name: 'Dashboard',
     components: {
@@ -54,6 +54,9 @@
     methods: {
       addField: function (fieldMeta) {
         meta.push(fieldMeta)
+      },
+      addRecord: function (record) {
+        data.push(record)
       }
     }
 }
