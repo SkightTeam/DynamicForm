@@ -4,10 +4,19 @@
     h2 Skight I-Tech Inc.
     div
       div(style="width:50%; display:inline-block")
+        h3 增加字段
         sk-form(:meta="metaSchema" v-on:submit="addField")
-      div(style="width:50%; display:inline-block") {{meta}}
+      div(style="width:50%; display:inline-block;")
+        h3 数据结构
+        div {{meta}}
+    hr
     div
-      sk-form(:meta="meta")
+      div(style="width:50%; display:inline-block")
+        h3 增加数据
+        sk-form(:meta="meta")
+      div(style="width:50%; display:inline-block;")
+        h3 数据
+        div {{data}}
 </template>
 
 <script>
@@ -54,8 +63,5 @@
 <style scoped>
   h1, h2 {
     font-weight: normal;
-  }
-  span{
-    display: inline-block;
   }
 </style>
