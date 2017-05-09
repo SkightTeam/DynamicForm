@@ -3,12 +3,19 @@
  <div>
    <h1>动态表单编辑器</h1>
    <h2>Skight I-Tech Inc.</h2>
-   <sk-form :meta="schema"></sk-form>
+   <div>
+   <sk-form :meta="metaSchema" v-on:submit="addField"></sk-form>
+   </div>
+   <div>
+     <sk-form :meta="meta" ></sk-form>
+   </div>
  </div>
 </template>
 
 <script>
   import SkForm from './skForm'
+  var meta = []
+  var data = {}
   export default {
     name: 'Dashboard',
     components: {
@@ -16,7 +23,7 @@
     },
     data () {
       return {
-        schema: [
+        metaSchema: [
           {
             code: 'code',
             name: '编码',
@@ -32,7 +39,14 @@
             name: '类型',
             type: 'string'
           }
-        ]
+        ],
+        meta: meta,
+        data: data
+      }
+    },
+    methods: {
+      addField: function (fieldMeta) {
+        meta.push(fieldMeta)
       }
     }
 }
