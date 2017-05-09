@@ -1,15 +1,13 @@
-<template >
-
- <div>
-   <h1>动态表单编辑器</h1>
-   <h2>Skight I-Tech Inc.</h2>
-   <div>
-   <sk-form :meta="metaSchema" v-on:submit="addField"></sk-form>
-   </div>
-   <div>
-     <sk-form :meta="meta" ></sk-form>
-   </div>
- </div>
+<template lang="pug" >
+  div
+    h1 动态表单编辑器
+    h2 Skight I-Tech Inc.
+    div
+      div(style="width:50%; display:inline-block")
+        sk-form(:meta="metaSchema" v-on:submit="addField")
+      div(style="width:50%; display:inline-block") {{meta}}
+    div
+      sk-form(:meta="meta")
 </template>
 
 <script>
@@ -56,5 +54,8 @@
 <style scoped>
   h1, h2 {
     font-weight: normal;
+  }
+  span{
+    display: inline-block;
   }
 </style>
