@@ -6,7 +6,7 @@
       div(style="width:50%; display:inline-block")
         h3 增加字段
         sk-form(:meta="metaSchema" v-on:submit="addField")
-      div(style="width:50%; display:inline-block;")
+      div(style="width:50%; display:inline-block; ")
         h3 数据结构
         div {{meta}}
     hr
