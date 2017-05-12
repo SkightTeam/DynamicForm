@@ -3,30 +3,31 @@
     h1 动态表单编辑器
     h2 Skight I-Tech Inc.
     div
-      div(style="width:50%; display:inline-block")
+      div(style="width:30%; display:inline-block")
         h3 增加字段
         sk-form(:meta="metaSchema" v-on:submit="addField")
-      div(style="width:50%; display:inline-block; ")
+      div(style="width:70%; display:inline-block; ")
         h3 数据结构
-        div {{meta}}
+        sk-list(v-bind:schema="metaSchema" v-bind:value="meta")
     hr
     div
-      div(style="width:50%; display:inline-block")
+      div(style="width:30%; display:inline-block")
         h3 增加数据
         sk-form(:meta="meta" v-on:submit="addRecord")
-      div(style="width:50%; display:inline-block;")
+      div(style="width:70%; display:inline-block;")
         h3 数据
-        div {{data}}
+        sk-list(v-bind:schema="meta" v-bind:value="data")
 </template>
 
 <script>
   import SkForm from './skForm'
+  import SkList from './skList'
   var meta = []
   var data = []
   export default {
     name: 'Dashboard',
     components: {
-      SkForm
+      SkList, SkForm
     },
     data () {
       return {
