@@ -1,21 +1,22 @@
 <template lang="pug" >
   div
-    h1 动态表单编辑器
-    h2 Skight I-Tech Inc.
+    h1 Dynamic Form Editor
+      sub Demo by
+        a(href="www.skight.ca") Skight I-Tech Inc.
     div
       div(style="width:30%; display:inline-block")
-        h3 增加字段
+        h3 Add Field
         sk-form(:meta="metaSchema" v-on:submit="addField")
       div(style="width:70%; display:inline-block; ")
-        h3 数据结构
+        h3 Schema
         sk-list(v-bind:schema="metaSchema" v-bind:value="meta")
     hr
     div
       div(style="width:30%; display:inline-block")
-        h3 增加数据
+        h3 Add Record
         sk-form(:meta="meta" v-on:submit="addRecord")
       div(style="width:70%; display:inline-block;")
-        h3 数据
+        h3 Data
         sk-list(v-bind:schema="meta" v-bind:value="data")
 </template>
 
@@ -34,17 +35,17 @@
         metaSchema: [
           {
             code: 'code',
-            name: '编码',
+            name: 'Code',
             type: 'string'
           },
           {
             code: 'name',
-            name: '名称',
+            name: 'Name',
             type: 'string'
           },
           {
             code: 'type',
-            name: '类型',
+            name: 'Type',
             type: 'string'
           }
         ],
