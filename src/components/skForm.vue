@@ -3,7 +3,7 @@
    <div>
    <div v-for="item in meta">
      <label>{{item.name}}:</label>
-     <sk-edit-scalar v-model="fieldSchema[item.code]"></sk-edit-scalar>
+     <sk-edit-scalar v-model="fields[item.code]"></sk-edit-scalar>
    </div>
    </div>
    <button @click="submit">submit</button>
@@ -19,14 +19,22 @@ export default {
     'meta'
   ],
   data () {
+    var fields = this.initFields()
     return {
-      fieldSchema: { }
+      fields: fields
     }
   },
   methods: {
     submit: function () {
-      this.$emit('submit', this.fieldSchema)
-      this.fieldSchema = {}
+      this.$emit('submit', this.fields)
+      this.fields = this.initFields()
+    },
+    initFields: function () {
+      var fields = {}
+      this.meta.forEach(function (item) {
+        fields[item.code] = null
+      })
+      return fields
     }
   }
 }
