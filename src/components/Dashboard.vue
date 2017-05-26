@@ -36,17 +36,27 @@
           {
             code: 'code',
             name: 'Code',
-            type: 'string'
+            type: 'scalar'
           },
           {
             code: 'name',
             name: 'Name',
-            type: 'string'
+            type: 'scalar'
           },
           {
             code: 'type',
             name: 'Type',
-            type: 'string'
+            type: 'enumeration',
+            enumerations: [
+              {
+                code: 'scalar',
+                name: 'Scalar Type'
+              },
+              {
+                code: 'enumeration',
+                name: 'Enumeration Type'
+              }
+            ]
           }
         ],
         meta: meta,
