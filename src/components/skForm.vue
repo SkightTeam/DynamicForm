@@ -3,7 +3,10 @@
    <div>
    <div v-for="item in meta">
      <label>{{item.name}}:</label>
-     <sk-edit-scalar v-model="fields[item.code]"></sk-edit-scalar>
+     <sk-edit-field
+       :value="fields[item.code]"
+       @input="value => { fields[item.code] = value }"
+       :meta="item"></sk-edit-field>
    </div>
    </div>
    <button @click="submit">submit</button>
@@ -12,8 +15,11 @@
 
 <script>
 import SkEditScalar from './skEditScalar'
+import SkEditField from './skEditField'
 export default {
-  components: {SkEditScalar},
+  components: {
+    SkEditField,
+    SkEditScalar},
   name: 'SkForm',
   props: [
     'meta'
