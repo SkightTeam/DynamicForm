@@ -17,18 +17,21 @@
         sk-form(:meta="meta" v-on:submit="addRecord")
       div(style="width:70%; display:inline-block;")
         h3 Data
-        sk-list(v-bind:schema="meta" v-bind:value="data")
+        sk-grid(v-bind:schema="meta" v-bind:value="data" v-on:submit="addRecord")
 </template>
 
 <script>
   import SkForm from './skForm'
   import SkList from './skList'
+  import SkGrid from './skGrid'
   var meta = []
   var data = []
   export default {
     name: 'Dashboard',
     components: {
-      SkList, SkForm
+      SkGrid,
+      SkList,
+      SkForm
     },
     data () {
       return {
