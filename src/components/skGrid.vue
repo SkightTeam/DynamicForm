@@ -11,16 +11,16 @@
          button Delete
       tr
         td(v-for="item in schema")
-          sk-edit-field(v-model="fields[item.code]" v-bind:meta="item")
+          sk-edit-scalar(v-model="fields[item.code]" v-bind:meta="item")
         td
           button(@click="submit") Add
 </template>
 
 <script>
-import SkEditField from './skEditField'
+import SkEditScalar from './skEditScalar'
 export default {
   components: {
-    SkEditField
+    SkEditScalar
   },
   name: 'SkGrid',
   props: [

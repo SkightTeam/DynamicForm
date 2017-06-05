@@ -6,10 +6,10 @@
     div
       div(style="width:30%; display:inline-block")
         h3 Add Field
-        sk-form(:meta="metaSchema" v-on:submit="addField")
+        sk-form(:meta="enumSchema" v-on:submit="addField")
       div(style="width:70%; display:inline-block; ")
         h3 Schema
-        sk-list(v-bind:schema="metaSchema" v-bind:value="meta")
+        sk-list(v-bind:schema="enumSchema" v-bind:value="meta")
     hr
     div
       div(style="width:30%; display:inline-block")
@@ -26,6 +26,18 @@
   import SkGrid from './skGrid'
   var meta = []
   var data = []
+  var fieldSchema = [
+    {
+      code: 'code',
+      name: 'Code',
+      type: 'scalar'
+    },
+    {
+      code: 'name',
+      name: 'Name',
+      type: 'scalar'
+    }
+  ]
   export default {
     name: 'Dashboard',
     components: {
@@ -60,6 +72,39 @@
                 name: 'Enumeration Type'
               }
             ]
+          }
+        ],
+        enumSchema: [
+          {
+            code: 'code',
+            name: 'Code',
+            type: 'scalar'
+          },
+          {
+            code: 'name',
+            name: 'Name',
+            type: 'scalar'
+          },
+          {
+            code: 'type',
+            name: 'Type',
+            type: 'enumeration',
+            enumerations: [
+              {
+                code: 'scalar',
+                name: 'Scalar Type'
+              },
+              {
+                code: 'enumeration',
+                name: 'Enumeration Type'
+              }
+            ]
+          },
+          {
+            code: 'enumertaions',
+            name: 'Enumerations',
+            type: 'list',
+            ofType: fieldSchema
           }
         ],
         meta: meta,
