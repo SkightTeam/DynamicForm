@@ -13,7 +13,7 @@ export default {
   ],
   methods: {
     addRecord: function (fields) {
-      this.$emit('input', fields)
+      this.value.push(fields)
     }
   }
 }
