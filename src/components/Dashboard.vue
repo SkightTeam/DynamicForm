@@ -26,18 +26,6 @@
   import SkGrid from './skGrid'
   var meta = []
   var data = []
-  var fieldSchema = [
-    {
-      code: 'code',
-      name: 'Code',
-      type: 'scalar'
-    },
-    {
-      code: 'name',
-      name: 'Name',
-      type: 'scalar'
-    }
-  ]
   export default {
     name: 'Dashboard',
     components: {
@@ -101,10 +89,21 @@
             ]
           },
           {
-            code: 'enumertaions',
+            code: 'enumerations',
             name: 'Enumerations',
             type: 'list',
-            ofType: fieldSchema
+            ofType: [
+              {
+                code: 'code',
+                name: 'Code',
+                type: 'scalar'
+              },
+              {
+                code: 'name',
+                name: 'Name',
+                type: 'scalar'
+              }
+            ]
           }
         ],
         meta: meta,

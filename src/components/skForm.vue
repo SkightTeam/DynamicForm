@@ -36,7 +36,11 @@ export default {
     initFields: function () {
       var fields = {}
       this.meta.forEach(function (item) {
-        fields[item.code] = null
+        if (item.type === 'list') {
+          fields[item.code] = []
+        } else {
+          fields[item.code] = null
+        }
       })
       return fields
     }

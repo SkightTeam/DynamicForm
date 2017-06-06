@@ -28,7 +28,7 @@ export default {
     'value'
   ],
   data: function () {
-    var fields = this.initFields
+    var fields = this.initFields()
     return {
       fields: fields
     }
